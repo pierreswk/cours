@@ -1,0 +1,326 @@
+/* général*/
+    
+     @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+    
+    body{
+        background-image: url("images/bg.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: white;
+        margin: auto;
+        max-width: 1000px;
+        width: 100%;
+        font-family: 'Lato', sans-serif;
+        font-size : 13px;
+        line-height: 20px;
+        position: relative;
+    }
+    
+    .fond{
+        margin: auto;
+        max-width: 1000px;
+        width: 100%;
+        background-color: white;
+        
+        position: absolute;
+        top: 0px;
+    }
+    
+    h1{
+        font-family: "Game of Thrones";
+        font-variant: small-caps;
+        font-size: 5vw;
+        font-weight: normal;
+        
+    }
+    
+    h2{
+        font-family: "Game of Thrones";
+        font-variant: small-caps;
+        font-size: 3.5vw;
+        font-weight: normal;
+    }
+    
+    h3{
+        font-family: "Game of Thrones";
+        font-variant: small-caps;
+        margin-top: 20px;
+        font-weight: normal;
+    }
+        
+    a{
+        text-decoration: none;
+        color: darkgoldenrod;
+    }
+    
+    /* navBar*/
+    
+   .navigationBar{
+
+        max-width: 1000px;
+        width: 100%;
+        height:50px;
+        position:fixed;
+        z-index:1;
+        background-color:rgba(255, 255, 255, 0.9);
+        border-bottom: solid 1px gray;
+        font-family : "Game of Thrones";
+        top: 0px;
+       
+       
+       
+}
+    .navFlex{
+        max-width: 900px;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+
+    }
+
+    
+    
+    .navigationBar a{
+        text-decoration: none;
+        color: black;
+    }
+    
+    .logo{
+        font-family: "Game of Thrones";
+            font-size:30px;
+        font-variant: small-caps;
+        
+    }
+    
+    /* titres*/
+    
+    #titre{
+        
+        padding-top: 80px;
+        text-align: center;
+    }
+    
+    /* Résumé Famille*/
+    
+    .resume{
+        width:300px;
+        font-style: italic;
+        float: left;
+        background-color: antiquewhite;
+        padding: 10px 10px 10px 10px;
+        margin-right: 15px;
+        
+    }
+    
+    
+    .contenu{
+        margin-left: 180px;
+        line-height: 25px;
+        
+    }
+    
+    .resume img{
+        width:280px;
+        margin-top: -200px;
+        background-color: white;
+        margin-left:5px;
+        border: solid 5px white;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        
+    }
+    
+    .resume img:hover{
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    
+    
+    
+    
+    table{
+            max-width: 280px;
+            width: 100%;
+            margin: auto;
+        }
+        
+        table td{
+              vertical-align: top;
+             padding-top: 10px;
+            
+        }
+        
+      
+        table td:nth-child(1){
+            font-weight: bold;
+            max-width: 75px;
+            width: 33%;
+
+        }
+    
+    .resumeMaison{
+        max-width: 900px;
+        width:100%;          
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        
+    }
+
+    .col1{
+        width : 33%;
+        
+        
+    }
+    
+    .col2{
+        width: 33%;
+        text-align: center;  
+          
+    }
+    
+    .blason{
+        max-width: 200px;
+        min-width: 150px;
+        margin-top: 50px;
+       
+    }
+
+    .col3{
+        width : 33%;
+        
+        
+    }
+
+    
+    @media screen and (max-width:640px){
+
+        .resumeMaison{
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+
+        }
+
+        .col1{
+            order: 2;
+        }
+
+        .col2{
+            order: 1;
+        }
+
+        .col3{
+            order: 3;
+        }
+
+        h1{
+            font-size: 30px;
+        }
+
+        h2{
+            font-size: 30px;
+
+        }
+
+    }
+    
+    
+    /* Famille*/
+    
+    .containerParents{
+        max-width: 900px;  
+        width: 100%;      
+        display: flex;
+        margin: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 50px;
+        
+    }
+
+    @media screen and (max-width: 640px){
+        .containerParents{
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+        .containerEnfants{
+            max-width: 500px;
+        }
+    }
+    
+    .containerEnfants{
+        max-width: 900px;
+        width: 100%;
+        
+        display: flex;
+        margin: auto;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 50px;
+        
+    }
+    
+     .element{
+        height: 250px;
+        margin: 10px;
+        
+        padding: 10px;
+        text-align: center;
+               
+        }
+    
+    .element a{
+        color: black;
+    }
+  
+    .element a:hover{
+        color: darkgoldenrod;
+    }
+    
+    .imgParents{
+         width: 200px;
+        height: 200px;
+        
+        object-fit: cover;
+        object-position: top;
+            
+    }
+    
+   
+    .imgEnfants{
+         width: 200px;
+        height: 200px;
+        
+        object-fit: cover;
+        object-position: top;
+    }
+    
+    #cercle {
+        -webkit-clip-path: circle(100px at 100px 100px);
+        transition: all 0.2s ease;
+
+    }
+    
+    #cercle:hover{
+         -webkit-clip-path: circle(90px at 100px 100px);
+        
+        
+    }
+    
+    #cercle2 {
+        -webkit-clip-path: circle(80px at 100px 100px);
+           transition: all 0.2s ease;
+
+    }
+    
+     #cercle2:hover{
+          -webkit-clip-path: circle(75px at 100px 100px);
+        
+    }
+    
+    

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+<!-- Commentaires HTML -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+</head>
+
+<script>
+    /* MODE NUIT */
+
+    var modeNuitActif = false;
+
+    function switchMode() {
+
+        if (modeNuitActif) {
+            var mode = document.body.style;
+            mode.backgroundColor = "white";
+            mode.color = "black";
+            document.querySelector('.fond').style.backgroundColor = "white";
+            document.getElementById('darkBtn').value = "Mode Nuit";
+            document.getElementById('darkBtn2').value = "Mode Nuit";
+            document.getElementById('darkBtn2').style.backgroundColor = "rgb(26, 26, 26)";
+            document.getElementById('darkBtn').style.backgroundColor = "rgb(26, 26, 26)";
+            document.getElementById('BoutonSuivant').style.backgroundImage = 'url("images/next.svg")';
+            document.getElementById('BoutonPrecedent').style.backgroundImage = 'url("images/next.svg")';
+            modeNuitActif = false;
+        } else {
+            var mode = document.body.style;
+            mode.backgroundColor = "rgb(26, 26, 26)";
+            mode.color = "white";
+            document.querySelector('.fond').style.backgroundColor = "rgb(26, 26, 26)";
+            document.getElementById('darkBtn2').value = "Mode Jour";
+            document.getElementById('darkBtn2').style.backgroundColor = "#b8860b";
+            document.getElementById('darkBtn').value = "Mode Jour";
+            document.getElementById('darkBtn').style.backgroundColor = "#b8860b";  
+           document.getElementById('BoutonSuivant').style.backgroundImage = 'url("images/next2.svg")';
+            document.getElementById('BoutonPrecedent').style.backgroundImage = 'url("images/next2.svg")';
+            modeNuitActif = true;
+        }
+
+    }
+
+    /* SLIDER */
+
+
+    var n = 1;
+
+    function imageSuivante() {
+
+        if (n == 4) {
+            n = 1;
+        } else {
+            n++;
+        }
+
+        var divImage = "<img src='images/image" + n + ".jpg'>";
+        document.getElementById('Image').innerHTML = divImage;
+    }
+
+    function imagePrecedent() {
+
+        if (n == 1) {
+            n = 4;
+        } else {
+            n--;
+        }
+
+        var divImage = "<img src='images/image" + n + ".jpg'>";
+        document.getElementById('Image').innerHTML = divImage;
+    }
+
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+
+    @font-face {
+        font-family: "Game of Thrones";
+        src: url(http://pierre.abod.co/wikiGoT/fonts/GameOfThrones.ttf);
+    }
+
+    body {
+        background-image: url("images/bg.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: white;
+        margin: auto;
+        max-width: 800px;
+        width: 100%;
+        font-family: 'Lato', sans-serif;
+        font-size: 13px;
+        line-height: 20px;
+
+    }
+
+
+
+    .fond {
+        margin: auto;
+        width: 100%;
+        background-color: white;
+
+    }
+
+    .navigationBar {
+
+        margin: auto;
+        max-width: 800px;
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-bottom: solid 1px gray;
+        font-family: "Game of Thrones";
+        top: 0px;
+
+
+
+    }
+
+    .navFlex {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+
+    }
+
+    .navigationBar a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .logo {
+        font-family: "Game of Thrones";
+        font-size: 30px;
+        font-variant: small-caps;
+
+    }
+
+    @media screen and (max-width: 768px) {
+        .logo {
+            font-size: 5vmin;
+            margin-left: 30px;
+        }
+    }
+
+    .maison {
+        font-family: "Game of Thrones";
+        font-size: 16px;
+        font-variant: small-caps;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    @media screen and (max-width: 768px) {
+        .maison {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .toggleNight {
+            display: none;
+        }
+    }
+
+    .maison a {
+        margin-left: 20px;
+    }
+
+
+
+    .entete {
+        width: 100%;
+        height: 300px;
+        background-image: url(images/Winterfell.jpg);
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .article {
+        max-width: 780px;
+        width: 100%;
+        margin: auto;
+
+    }
+
+    @media screen and (max-width: 300px) {
+        .article {
+            float: left;
+
+        }
+
+    }
+
+
+
+    .resume {
+
+        width: 100%;
+        font-style: italic;
+        float: left;
+        background-color: darkgoldenrod;
+        padding: 10px 10px 10px 10px;
+        margin-right: 15px;
+        margin-top: -17px;
+        color: white;
+
+    }
+
+    @media screen and (min-width:480px) {
+        .resume {
+            width: 300px;
+
+        }
+    }
+
+
+
+
+
+    .contenu p{
+        width: 90%;
+        
+    }
+    
+    
+    .contenu {
+        margin-right: 20px;
+        margin-left: 190px;
+        line-height: 25px;
+
+    }
+
+    @media screen and (max-width: 480px) {
+        .contenu {
+            width: 95%;
+            margin: auto;
+        }
+    }
+
+    .section {
+        display: block;
+        margin-top: -50px;
+        padding-top: 50px;
+
+    }
+
+    .resume img {
+        width: 100%;
+        max-width: 280px;
+        margin: -200px auto auto auto;
+        display: block;
+        background-color: white;
+
+        border: solid 5px white;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    }
+
+
+
+    @media screen and (max-width: 480px) {
+        .resume img {
+
+            width: 100%;
+            display: block;
+
+
+        }
+    }
+
+
+
+    .resume img:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    h1 {
+        font-family: "Game of Thrones";
+        font-variant: small-caps;
+        margin-top: 15px;
+    }
+
+
+
+    table {
+        width: 280px;
+    }
+
+    table td {
+        vertical-align: top;
+        padding-top: 10px;
+
+    }
+
+
+    table td:nth-child(1) {
+        font-weight: bold;
+        width: 75px;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: darkgoldenrod;
+    }
+
+    .navigationSide {
+        height: 150px;
+        width: 100px;
+        border-radius: 4%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        background-color: dimgrey;
+        color: white;
+        position: sticky;
+        float: left;
+        top: 350px;
+        margin-left: -180px;
+
+    }
+
+    @media screen and (max-width: 768px) {
+        .navigationSide {
+            display: none;
+        }
+    }
+
+
+    .navigationSide a {
+        text-decoration: none;
+        font-size: 16px;
+        color: white;
+        font-weight: bold;
+
+    }
+
+
+    #darkBtn {
+        outline: none;
+        padding: 10px;
+        background-color: rgb(26, 26, 26);
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-family: "Game of Thrones";
+        font-variant: small-caps;
+    }
+    
+    #darkBtn2 {
+        outline: none;
+        padding: 10px;
+        background-color: rgb(26, 26, 26);
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-family: "Game of Thrones";
+        font-variant: small-caps;
+    }
+
+
+    /* BURGER MENU */
+
+    .burger {
+        display: none;
+
+    }
+
+    @media screen and (max-width: 768px) {
+        .burger {
+            display: block;
+            margin-top: 10px;
+            z-index: 2;
+            position: absolute;
+        }
+    }
+
+
+    .burger-shower {
+        display: none;
+    }
+
+    .burger-shower:checked~.burger-menu {
+        display: block;
+    }
+
+    .hamburger {
+        width: 3.4em;
+        height: 2.4em;
+        line-height: .1em;
+        padding: 0 .4em .4em;
+        cursor: pointer;
+    }
+
+
+    .burger-menu {
+        display: none;
+        width: 200px;
+        height: 400px;
+        background-color: rgba(255, 255, 255, 0.9);
+        top: 27px;
+        position: absolute;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .burger-menu li {
+        padding-top: 30px;
+        list-style: none;
+
+    }
+
+    .burger-menu hr {
+        border: solid 1px darkgoldenrod;
+        width: 150px;
+        margin: 30px 0 0 0;
+    }
+
+
+    /* SLIDER */
+
+    #Image {
+        width: 100%;
+        height: 400px;
+        border: solid 1px darkgoldenrod;
+        margin: 30px auto;
+
+    }
+
+    #Image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .BoutonBox {
+        margin: auto auto 100px auto;
+        padding-bottom: 100px;
+        width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+
+    .BoutonSuivant {
+        width: 60px;
+        height: 60px;
+        background-image: url(images/next.svg);
+        background-size: cover;
+        margin: auto;
+        cursor: pointer;
+    }
+
+    .BoutonPrecedent {
+        width: 60px;
+        height: 60px;
+        background-image: url(images/next.svg);
+        background-size: cover;
+        transform: rotate(180deg);
+        margin: auto;
+        cursor: pointer;
+    }
+
+</style>
+
+<body>
+
+    <div class="navigationBar">
+
+        <div class="burger">
+            <input type="checkbox" id="burger-shower" class="burger-shower">
+            <label for="burger-shower" class="hamburger">
+                <img src="images/menu.svg"></label>
+
+
+            <ul class="burger-menu">
+
+                <li><a href="#">Maison Stark</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><input id="darkBtn" type="button" value="Mode Nuit" onclick="switchMode()"></li>
+
+                <hr/>
+
+                <li> <a href="#saison1">Saison 1</a></li>
+                <li> <a href="#saison2">Saison 2</a></li>
+                <li> <a href="#saison3">Saison 3</a></li>
+                <li> <a href="#saison6">Saison 6</a></li>
+                
+
+
+            </ul>
+        </div>
+
+        <div class="navFlex">
+
+
+
+            <div class="logo"><a href="#">Game of Thrones</a></div>
+
+            <div class="maison">
+
+                <a href="maison-stark.html">Maison Stark</a>
+
+
+
+            </div>
+
+            <input id="darkBtn2" type="button" value="Mode Nuit" onclick="switchMode()">
+
+
+        </div>
+
+    </div>
+
+
+    <div class="fond">
+
+
+        <div class="entete">
+
+        </div>
+
+        <div class="article">
+
+            <div class="resume">
+                <img src="images/Rickon.jpg">
+                <div style="width:280px;">
+
+
+                    <table>
+                        <tr>
+                            <td>Interprète</td>
+                            <td>Art Parkinson</td>
+                        </tr>
+                        <tr>
+                            <td>Saison(s)</td>
+                            <td>1, 2, 3, 6</td>
+                        </tr>
+
+                        <tr>
+                            <td>Apparaît dans</td>
+                            <td>14 épisodes</td>
+                        </tr>
+
+                        <tr>
+                            <td>Première apparition</td>
+                            <td>"L'hiver vient" </td>
+                        </tr>
+
+                        <tr>
+                            <td>Dernière apparition</td>
+                            <td>"La Bataille des Bâtards"</td>
+                        </tr>
+
+                        <tr>
+                            <td>Titre(s)</td>
+                            <td>Prince</td>
+                        </tr>
+
+                        <tr>
+                            <td>Statut</td>
+                            <td>Décédé</td>
+                        </tr>
+
+                        <tr>
+                            <td>Âge</td>
+                            <td>11 ans (saison 6)</td>
+                        </tr>
+
+                        <tr>
+                            <td>Naissance</td>
+                            <td>292 AL</td>
+                        </tr>
+
+                        <tr>
+                            <td>Mort
+                            </td>
+                            <td>Transpercé par une flèche tirée par Ramsay Bolton lors de la Bataille des Bâtards.</td>
+                        </tr>
+                        <tr>
+                            <td>Origine
+                            </td>
+                            <td>
+                                Winterfell</td>
+                        </tr>
+
+
+
+
+
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <div class="contenu">
+
+
+                <h1>Rickon Stark</h1>
+
+                <p> <a href="#">Rickon Stark</a> est un personnage récurrent dans la première, deuxième, troisième et sixième saisons de <a href="#">Game of Thrones</a>. Il est interprété par <a href="#">Art Parkinson</a> et fait ses débuts dans l'épisode <a href="#">"L'hiver vient"</a>. Il est le dernier enfant, et troisième fils, d'<a href="#">Eddard</a> et <a href="#">Catelyn Stark</a> ainsi que le jeune frère de <a href="#">Robb</a>, <a href="#">Sansa</a>, <a href="#">Arya</a> et <a href="#">Bran</a>. Il est également le cousin de <a href="#">Jon Snow</a>.</p>
+                <p> <a href="#">Rickon Stark</a> est un personnage récurrent dans la première, deuxième, troisième et sixième saisons de <a href="#">Game of Thrones</a>. Il est interprété par <a href="#">Art Parkinson</a> et fait ses débuts dans l'épisode <a href="#">"L'hiver vient"</a>. Il est le dernier enfant, et troisième fils, d'<a href="#">Eddard</a> et <a href="#">Catelyn Stark</a> ainsi que le jeune frère de <a href="#">Robb</a>, <a href="#">Sansa</a>, <a href="#">Arya</a> et <a href="#">Bran</a>. Il est également le cousin de <a href="#">Jon Snow</a>.</p>
+
+                <h2>Biographie</h2>
+                <h3>Contexte</h3>
+
+                <p>Né à <a href="#">Winterfell</a> en l'an 292, <a href="#">Rickon</a> est le troisième fils et cinquième enfant de <a href="#">Catelyn</a> et d'<a href="#">Eddard</a>, le seigneur de la Maison Stark; et le plus jeune frère de <a href="#">Robbw</a>, <a href="#">Sansa</a>, <a href="#">Arya</a> et <a href="#">Bran</a>.</p>
+                <p>Né à <a href="#">Winterfell</a> en l'an 292, <a href="#">Rickon</a> est le troisième fils et cinquième enfant de <a href="#">Catelyn</a> et d'<a href="#">Eddard</a>, le seigneur de la Maison Stark; et le plus jeune frère de <a href="#">Robbw</a>, <a href="#">Sansa</a>, <a href="#">Arya</a> et <a href="#">Bran</a>.</p>
+
+
+                <div class="navigationSide">
+                    <a href="#saison1">Saison 1</a>
+                    <a href="#saison2">Saison 2</a>
+                    <a href="#saison3">Saison 3</a>
+                    <a href="#saison6">Saison 6</a>
+                    <a href="#galerie">Galerie</a>
+                </div>
+
+                <a class="section" id="saison1"></a>
+                <h3>Saison 1</h3>
+
+                <p><a href="#">Rickon</a> joue un rôle secondaire dans la <a href="#">première saison</a>. On le sent solitaire, mais très proche de son loup, <a href="#">Broussaille</a>. Il partage le rêve prémonitoire de <a href="#">Bran</a> sur la mort de leur père. C'est un enfant isolé et désemparé, comme <a href="#">Robb</a> le fait remarquer à sa mère alors qu'elle veille <a href="#">Bran</a> depuis de longs jours après la chute qui a provoqué son infirmité.</p>
+                <p><a href="#">Rickon</a> joue un rôle secondaire dans la <a href="#">première saison</a>. On le sent solitaire, mais très proche de son loup, <a href="#">Broussaille</a>. Il partage le rêve prémonitoire de <a href="#">Bran</a> sur la mort de leur père. C'est un enfant isolé et désemparé, comme <a href="#">Robb</a> le fait remarquer à sa mère alors qu'elle veille <a href="#">Bran</a> depuis de longs jours après la chute qui a provoqué son infirmité.</p>
+
+                <a class="section" id="saison2"></a>
+                <h3>Saison 2</h3>
+
+                <p><a href="#">Rickon</a> est souvent présent aux côtés de son frère <a href="#">Bran</a>. Depuis le départ de ses parents, c'est <a href="#">Mestre Luwin</a> qui est chargé de s'occuper du dernier-né de la famille. <a href="#">Rickon</a> est un enfant difficile, qui a du mal à comprendre ce qui se passe, et qui veut revoir ses parents. À la fin de la deuxième saison, il quitte Winterfell en ruine avec Bran, Hodor, la sauvageonne Osha et les deux loups Été et Broussaille. Puis, à l’initiative de Bran, il se sépare de lui et part avec Osha et Broussaille dans le but de trouver refuge auprès des Omble, bannerets de son père Eddard.</p>
+                <p><a href="#">Rickon</a> est souvent présent aux côtés de son frère <a href="#">Bran</a>. Depuis le départ de ses parents, c'est <a href="#">Mestre Luwin</a> qui est chargé de s'occuper du dernier-né de la famille. <a href="#">Rickon</a> est un enfant difficile, qui a du mal à comprendre ce qui se passe, et qui veut revoir ses parents. À la fin de la deuxième saison, il quitte Winterfell en ruine avec Bran, Hodor, la sauvageonne Osha et les deux loups Été et Broussaille. Puis, à l’initiative de Bran, il se sépare de lui et part avec Osha et Broussaille dans le but de trouver refuge auprès des Omble, bannerets de son père Eddard.</p>
+
+                <a class="section" id="saison3"></a>
+                <h3>Saison 3</h3>
+
+                <p><i>Cette section est vide, insuffisamment détaillée ou incomplète. Votre aide est la bienvenue !</i></p>
+
+                <a class="section" id="saison6"></a>
+                <h3>Saison 6</h3>
+
+                <p>Au début de la saison 6, on voit Rickon et la sauvageonne Osha, sa protectrice, livrés à Ramsay Bolton par les Omble qui les ont trahis. Comme preuve de l'identité de Rickon, les Omble ont apporté à Ramsay la tête tranchée de son loup, Broussaille. Par la suite, Ramsay adresse une lettre de défi à Jon Snow, à Châteaunoir, où il menace de tuer Rickon. Au début de la Bataille des Bâtards, Ramsey libère Rickon devant l'armée de Jon en lui proposant un jeu à l'issue mortelle. Il doit courir rejoindre son frère tout en esquivant les flèches tirées par Lord Bolton. Rickon se fait transpercer d'une flèche et agonise devant son demi-frère qui était venu le secourir à cheval.</p>
+                <p>Au début de la saison 6, on voit Rickon et la sauvageonne Osha, sa protectrice, livrés à Ramsay Bolton par les Omble qui les ont trahis. Comme preuve de l'identité de Rickon, les Omble ont apporté à Ramsay la tête tranchée de son loup, Broussaille. Par la suite, Ramsay adresse une lettre de défi à Jon Snow, à Châteaunoir, où il menace de tuer Rickon. Au début de la Bataille des Bâtards, Ramsey libère Rickon devant l'armée de Jon en lui proposant un jeu à l'issue mortelle. Il doit courir rejoindre son frère tout en esquivant les flèches tirées par Lord Bolton. Rickon se fait transpercer d'une flèche et agonise devant son demi-frère qui était venu le secourir à cheval.</p>
+
+                <h2>Personnalité</h2>
+
+                <p>Rickon est très jeune, il a les yeux brillants et ressemble à sa mère en apparence. Après le départ de sa mère vers le Sud, Rickon refuse qu'on lui coupe les cheveux. En conséquence, il a de longs cheveux indisciplinés. Étant jeune, il est difficile pour lui de faire face aux terribles changements dus à la guerre qui surviennent dans sa vie et celle de sa famille.</p>
+                <p>Rickon est très jeune, il a les yeux brillants et ressemble à sa mère en apparence. Après le départ de sa mère vers le Sud, Rickon refuse qu'on lui coupe les cheveux. En conséquence, il a de longs cheveux indisciplinés. Étant jeune, il est difficile pour lui de faire face aux terribles changements dus à la guerre qui surviennent dans sa vie et celle de sa famille.</p>
+                
+                <a class="section" id="galerie"></a>
+                <h2>Galerie</h2>
+
+                <div id="Image"><img src="images/image1.jpg"></div>
+                <div class="BoutonBox">
+                    <div class="BoutonPrecedent" id="BoutonPrecedent" onclick="imagePrecedent()"></div>
+                    <div class="BoutonSuivant" id="BoutonSuivant" onclick="imageSuivante()"></div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
